@@ -20,19 +20,15 @@ class CaesarCipher:
         
                 
     def encrypt(self, plain_text):
-        self.plain_text = plain_text
+        # self.plain_text = plain_text
         cipher_text = look_up_list(plain_text)
+        ''.join(self.cipher_text) #  I change the list to str
         
         
     def decrypt(self):
+        pass
         
         
-        
-        
-        
-        
-                    
-
 
 class VigenereCipher:
     def __init__(self, key, look_up_list):
@@ -42,15 +38,16 @@ class VigenereCipher:
         assert(len(self.key) <= len(plain_text))
         
     def decrypt(self):
+        pass
                    
             
 if __name__ == "__main__":
     caesar = CaesarCipher(89000,look_up_list_gen(plain_text))
     caesar.encrypt(plain_text)
-    print("Encrypted text: "+caesar.cipher_text)
-    print("Decrypted text: "+caesar.decrypt())
+    print("Encrypted text: ",caesar.cipher_text)
+    print("Decrypted text: ",caesar.decrypt())
 
     vigenere = VigenereCipher(plain_text[:5],look_up_list_gen(plain_text))
     vigenere.encrypt(plain_text)
-    print("Encrypted text: "+vigener.cipher_text)
-    print("Decrypted text: "+vigener.decrypt())                         
+    print("Encrypted text: ",vigener.cipher_text)
+    print("Decrypted text: ",vigener.decrypt())                         
