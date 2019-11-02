@@ -33,6 +33,7 @@ class CaesarCipher:
 class VigenereCipher:
     def __init__(self, key, look_up_list):
         assert(type(key) == str)
+        self.key = key
         
     def encrypt(self, plain_text):
         assert(len(self.key) <= len(plain_text))
