@@ -21,7 +21,7 @@ class CaesarCipher:
                 
     def encrypt(self, plain_text):
         # self.plain_text = plain_text
-        cipher_text = look_up_list(plain_text)
+        cipher_text = look_up_list_gen(plain_text)
         ''.join(self.cipher_text) #  I change the list to str
         
         
