@@ -50,5 +50,5 @@ if __name__ == "__main__":
 
     vigenere = VigenereCipher(plain_text[:5],look_up_list_gen(plain_text))
     vigenere.encrypt(plain_text)
-    print("Encrypted text: ",vigener.cipher_text)
-    print("Decrypted text: ",vigener.decrypt())                         
+    #print("Encrypted text: ",vigenere.cipher_text)
+    #print("Decrypted text: ",vigenere.decrypt())                         
