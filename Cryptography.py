@@ -57,17 +57,18 @@ class VigenereCipher:
         
     def encrypt(self, plain_text):
         assert(len(self.key) <= len(plain_text))
-         cipher_text = look_up_list(plain_text)
+        cipher_text = look_up_list_gen(plain_text)
         for i in range(len(cipher_text)):
-            x = (ord(cipher_text[i]) + ord(key[i])) % 26
+            x = (ord(cipher_text[i]) + ord(self.key[i])) % 26
             x += ord('A')
             cipher_text.append(chr(x))
         return("".join(cipher_text))
         
     def decrypt(self):
         plain_text =[]
+        cipher_text = look_up_list_gen(plain_text)
         for i in range(len(cipher_text)):
-            x = (ord(cipher_text[i])- ord(key[i]) + 26) % 26
+            x = (ord(cipher_text[i])- ord(self.key[i]) + 26) % 26
             x += ord('A')
             plain_text.append(chr(x))
         return("".join(plain_text))
@@ -82,7 +83,7 @@ if __name__ == "__main__":
     """)
     print("Decrypted text: ",caesar.decrypt(caesar.cipher_text).capitalize())
 
-    #vigenere = VigenereCipher(plain_text[:5],look_up_list_gen(plain_text))
-    #vigenere.encrypt(plain_text)
-    #print("Encrypted text: ",vigenere.cipher_text)
-    #print("Decrypted text: ",vigenere.decrypt())                         
+    vigenere = VigenereCipher(plain_text[:5],look_up_list_gen(plain_text))
+    vigenere.encrypt(plain_text)
+    print("Encrypted text: ",vigenere.cipher_text)
+    print("Decrypted text: ",vigenere.decrypt())                         
